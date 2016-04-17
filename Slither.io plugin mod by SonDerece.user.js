@@ -319,7 +319,7 @@
     // Set leaderboard
     function setLeaderboard() {
         if (w.lbh) {
-            w.lbh.textContent = "MOD: SLITio by szymy";
+            w.lbh.textContent = "Mod by SonDerece";
             w.lbh.style.fontSize = "20px";
         } else {
             setTimeout(setLeaderboard, 100);
