@@ -5,12 +5,12 @@
 // @description  Slither.io Mod
 // @author       SonDerece
 // @match        http://slither.io/*
-// @updateURL    http://ogario.ovh/download/SLITio.user.js
+// @updateURL    https://github.com/SonDerece/slitherio-mod/raw/master/Slither.io plugin mod by SonDerece.user.js
 // @run-at       document-body
 // @grant        none
 // ==/UserScript==
 
-// Source: http://ogario.ovh/download/SLITio.user.js
+// Source: https://github.com/SonDerece/slitherio-mod/raw/master/Slither.io plugin mod by SonDerece.user.js
 
 (function(w) {
     var modVersion = "v1.3",
