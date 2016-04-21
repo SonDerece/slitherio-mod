@@ -13,7 +13,7 @@
 // Source: https://github.com/SonDerece/slitherio-mod/raw/master/Slither.io plugin mod by SonDerece.user.js
 
 (function(w) {
-    var modVersion = "v1.3",
+    var modVersion = "v1.4",
         renderMode = 2, // 3 - normal, 2 - optimized, 1 - simple (mobile)
         normalMode = false,
         gameFPS = null,
@@ -202,7 +202,8 @@
             option.text = "Grafik: Düşük";
             select.appendChild(option);
             // Menu footer
-            sltMenu.innerHTML += '<a href="https://www.youtube.com/channel/UC0DoQK5-fzY-B2B7x3ABp7Q" target="_blank" style="color: #FFF; opacity: 0.35;">Youtube Kanalı</a>';
+            sltMenu.innerHTML += '<a href="https://www.youtube.com/channel/UC0DoQK5-fzY-B2B7x3ABp7Q" target="_blank" style="color: #FFF; opacity: 0.35;">Youtube Kanalı</a> | ';
+            sltMenu.innerHTML += '<a href="https://github.com/UnioDex/UnioCraft" target="_blank" style="color: #FFF; opacity: 0.35;">UnioCraft Duyuru</a>';
             // Get IP input
             inpIP = document.getElementById("server-ip");
             // Get nick
