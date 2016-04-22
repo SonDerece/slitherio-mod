@@ -20,7 +20,7 @@
         positionHUD = null,
         ipHUD = null,
         fpsHUD = null,
-        styleHUD = "color: #FFF; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; position: fixed; opacity: 0.35; z-index: 7;",
+        styleHUD = "color: #FFF; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; position: fixed; opacity: 0.35; z-index: 7;",
         inpNick = null,
         currentIP = null,
         retry = 0,
@@ -28,8 +28,8 @@
     function init() {
         // Append DIVs
         appendDiv("position-hud", "nsi", styleHUD + "right: 30; bottom: 120px;");
-        appendDiv("ip-hud", "nsi", styleHUD + "right: 30; bottom: 150px;");
-        appendDiv("fps-hud", "nsi", styleHUD + "right: 30; bottom: 170px;");
+        appendDiv("ip-hud", "nsi", styleHUD + "right: 30; top: 220px;");
+        appendDiv("fps-hud", "nsi", styleHUD + "right: 30; top: 250px;");
         positionHUD = document.getElementById("position-hud");
         ipHUD = document.getElementById("ip-hud");
         fpsHUD = document.getElementById("fps-hud");
@@ -107,7 +107,7 @@
             div.style.opacity = "0.5";
             div.style.margin = "0 auto";
             div.style.padding = "10px 0";
-            div.textContent = "www.uniocraft.com";
+            div.textContent = "⇒ www.uniocraft.com ⇐";
             login.appendChild(div);
             // Menu container
             var sltMenu = document.createElement("div");
@@ -120,12 +120,12 @@
             sltMenu.style.textAlign = "center";
             sltMenu.style.margin = "0 auto 100px auto";
             sltMenu.style.padding = "10px 14px";
-            sltMenu.innerHTML = "Slither.io Mod: <strong>by SonDerece</strong> | <strong>" + modVersion + "</strong>";
+            sltMenu.innerHTML = "Slither.io Mod: <strong>by SonDerece </strong> | <strong>" + modVersion + "</strong>";
             login.appendChild(sltMenu);
             // IP input container
             var div = document.createElement("div");
             div.style.color = "#8058D0";
-            div.style.backgroundColor = "#4C447C";
+            div.style.backgroundColor = "#919191";
             div.style.borderRadius = "29px";
             div.style.margin = "10 auto";
             div.style.padding = "8px";
@@ -138,7 +138,6 @@
             input.style.height = "24px";
             input.style.display = "inline-block";
             input.style.background = "none";
-            input.style.color = "#e0e0ff";
             input.style.border = "none";
             input.style.outline = "none";
             div.appendChild(input);
@@ -172,7 +171,7 @@
             select.style.outline = "none";
             var option = document.createElement("option");
             option.value = "";
-            option.text = "-- Sunucu Seçimi --";
+            option.text = "★ Sunucu Seçimi ★";
             select.appendChild(option);
             div.appendChild(select);
             // Select graph container
@@ -195,14 +194,14 @@
             select.appendChild(option);
             var option = document.createElement("option");
             option.value = "2";
-            option.text = "Grafik: Optimize";
+            option.text = "Grafik: Optimize ✓";
             select.appendChild(option);
             var option = document.createElement("option");
             option.value = "1";
             option.text = "Grafik: Düşük";
             select.appendChild(option);
             // Menu footer
-            sltMenu.innerHTML += '<a href="https://www.youtube.com/channel/UC0DoQK5-fzY-B2B7x3ABp7Q" target="_blank" style="color: #FFF; opacity: 0.35;">Youtube Kanalı</a> | ';
+            sltMenu.innerHTML += '<a href="https://www.youtube.com/channel/UC0DoQK5-fzY-B2B7x3ABp7Q" target="_blank" style="color: #FFF; opacity: 0.35;">Youtube Kanalı</a> ◊ ';
             sltMenu.innerHTML += '<a href="https://github.com/UnioDex/UnioCraft" target="_blank" style="color: #FFF; opacity: 0.35;">UnioCraft Duyuru</a>';
             // Get IP input
             inpIP = document.getElementById("server-ip");
@@ -320,7 +319,7 @@
     // Set leaderboard
     function setLeaderboard() {
         if (w.lbh) {
-            w.lbh.textContent = "Mod by SonDerece";
+            w.lbh.textContent = "Mod by SonDerece ♈";
             w.lbh.style.fontSize = "20px";
         } else {
             setTimeout(setLeaderboard, 100);
