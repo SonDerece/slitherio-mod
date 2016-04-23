@@ -107,7 +107,7 @@
             div.style.opacity = "0.5";
             div.style.margin = "0 auto";
             div.style.padding = "10px 0";
-            div.textContent = "⇒ www.uniocraft.com ⇐";
+            div.innerHTML += '<a href="http://www.uniocraft.com" target="_blank" style="color: #56ac81; opacity: 2;">UnioCraft Resmi Sitesi</a>';
             login.appendChild(div);
             // Menu container
             var sltMenu = document.createElement("div");
@@ -201,7 +201,7 @@
             option.text = "Grafik: Düşük";
             select.appendChild(option);
             // Menu footer
-            sltMenu.innerHTML += '<a href="https://www.youtube.com/channel/UC0DoQK5-fzY-B2B7x3ABp7Q" target="_blank" style="color: #FFF; opacity: 0.35;">Youtube Kanalı</a> ◊ ';
+            sltMenu.innerHTML += '<a href="https://www.youtube.com/channel/UC0DoQK5-fzY-B2B7x3ABp7Q" target="_blank" style="color: #FFF; opacity: 0.35;">Youtube Kanalı</a> ↔ ';
             sltMenu.innerHTML += '<a href="https://github.com/UnioDex/UnioCraft" target="_blank" style="color: #FFF; opacity: 0.35;">UnioCraft Duyuru</a>';
             // Get IP input
             inpIP = document.getElementById("server-ip");
