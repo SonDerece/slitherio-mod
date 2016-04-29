@@ -20,7 +20,7 @@
         positionHUD = null,
         ipHUD = null,
         fpsHUD = null,
-        styleHUD = "color: #FFF; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; position: fixed; opacity: 0.35; z-index: 7;",
+        styleHUD = "color: #FFF; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; position: fixed; opacity: 1; z-index: 7;",
         inpNick = null,
         currentIP = null,
         retry = 0,
@@ -39,12 +39,26 @@
         } else {
             document.body.onmousewheel = zoom;
         }
-        // Quick resp (ESC)
-        w.onkeydown = function(e) {
-            if (e.keyCode == 27) {
-                forceConnect();
-            }
-        }
+        // Keys
+        w.addEventListener("keydown", function(e) {
+			switch(e.keyCode) {
+				// ESC - quick resp
+				case 27: forceConnect();
+					break;
+				// A - Auto skin rotator
+				case 65: rotate = !rotate; rotateSkin();
+					break;
+				// Q - Quit to menu
+				case 81: quit();
+					break;
+				// S - Change skin
+				case 83: changeSkin();
+					break;
+				// Z - Reset zoom
+				case 90: resetZoom();
+					break;
+			}
+        }, false);
         // Hijack console log
         /*
         if (w.console) {
@@ -84,6 +98,10 @@
         }
         w.gsc *= Math.pow(0.9, e.wheelDelta / -120 || e.detail / 2 || 0);
     }
+    	// Reset zoom
+	function resetZoom() {
+		w.gsc = 0.9;
+	}
     // Get console log
     function getConsoleLog(log) {
         //w.console.logOld(log);
@@ -107,7 +125,7 @@
             div.style.opacity = "0.5";
             div.style.margin = "0 auto";
             div.style.padding = "10px 0";
-            div.innerHTML += '<a href="http://www.uniocraft.com" target="_blank" style="color: #56ac81; opacity: 2;">UnioCraft Resmi Sitesi</a>';
+            div.innerHTML += '<a target="_blank" style="color: #56ac81; opacity: 2;">| A <strong>→</strong> Otomatik Skin Değiştirici |<br/>| Q <strong>→</strong> Ana menüye dön |<br/> | ESC <strong>→</strong> Hızlı Restart |<br/>| Z <strong>→</strong> Zoomu Resetle |<br/> | S <strong>→</strong> Skin Değiştir |</a>';
             login.appendChild(div);
             // Menu container
             var sltMenu = document.createElement("div");
@@ -392,6 +410,39 @@
             }
         }
         setTimeout(updateLoop, 1000);
+    }
+    	// Change skin
+	function changeSkin() {
+		if (w.playing && w.snake != null) {
+			var skin = w.snake.rcv;
+			skin++;
+			if (skin > w.max_skin_cv) {
+				skin = 0;
+			}
+			w.setSkin(w.snake, skin);
+		}
+	}
+	// Rotate skin
+	function rotateSkin() {
+		if (!rotate) {
+			return;
+		}
+		changeSkin();
+		setTimeout(rotateSkin, 1000);
+	}
+	// Quit to menu
+	function quit() {
+        if (w.playing) {
+            w.want_close_socket = true;
+            w.dead_mtm = 1;
+			if (w.ws) {
+				w.ws.close();
+				w.ws = null;
+			}
+            w.playing = w.connected = false;
+            w.resetGame();
+            w.play_btn.setEnabled(true);
+        }
     }
     // Init
     init();
