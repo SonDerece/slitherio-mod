@@ -125,7 +125,7 @@
             div.style.opacity = "0.5";
             div.style.margin = "0 auto";
             div.style.padding = "10px 0";
-            div.innerHTML += '<a target="_blank" style="color: #56ac81; opacity: 2;">| A <strong>→</strong> Otomatik Skin Değiştirici |<br/>| Q <strong>→</strong> Ana menüye dön |<br/> | ESC <strong>→</strong> Hızlı Restart |<br/>| Z <strong>→</strong> Zoomu Resetle |<br/> | S <strong>→</strong> Skin Değiştir |</a>';
+            div.innerHTML += '<a target="_blank" style="color: #56ac81; opacity: 2;">| Q <strong>→</strong> Ana menüye dön |<br/> | ESC <strong>→</strong> Hızlı Restart |<br/>| Z <strong>→</strong> Zoomu Resetle |<br/> | S <strong>→</strong> Skin Değiştir |</a>';
             // div.innerHTML += '<a target="_blank" style="color: #56ac81; opacity: 2;">| A <strong>→</strong> Otomatik Skin Değiştirici |<br/>
             login.appendChild(div);
             // Menu container
