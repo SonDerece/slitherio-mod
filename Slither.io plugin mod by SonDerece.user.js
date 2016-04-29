@@ -13,7 +13,7 @@
 // Source: https://github.com/SonDerece/slitherio-mod/raw/master/Slither.io plugin mod by SonDerece.user.js
 
 (function(w) {
-    var modVersion = "v1.4",
+    var modVersion = "v1.5",
         renderMode = 2, // 3 - normal, 2 - optimized, 1 - simple (mobile)
         normalMode = false,
         gameFPS = null,
@@ -126,6 +126,7 @@
             div.style.margin = "0 auto";
             div.style.padding = "10px 0";
             div.innerHTML += '<a target="_blank" style="color: #56ac81; opacity: 2;">| A <strong>→</strong> Otomatik Skin Değiştirici |<br/>| Q <strong>→</strong> Ana menüye dön |<br/> | ESC <strong>→</strong> Hızlı Restart |<br/>| Z <strong>→</strong> Zoomu Resetle |<br/> | S <strong>→</strong> Skin Değiştir |</a>';
+            // div.innerHTML += '<a target="_blank" style="color: #56ac81; opacity: 2;">| A <strong>→</strong> Otomatik Skin Değiştirici |<br/>
             login.appendChild(div);
             // Menu container
             var sltMenu = document.createElement("div");
